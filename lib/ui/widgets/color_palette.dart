@@ -9,10 +9,7 @@ class ColorPalette extends StatelessWidget {
     required this.baseColor2,
     required this.baseColor3,
     required this.baseColor4,
-    required this.callback1,
-    required this.callback2,
-    required this.callback3,
-    required this.callback4,
+    required this.callback,
   }) : super(key: key);
 
   // atributos de la clase, por ejemplo
@@ -23,10 +20,7 @@ class ColorPalette extends StatelessWidget {
 
   // también se puede tener como un atributo un callback, necesiario ya que es un
   // widget sin estado, por ejemplo
-  final Function(String) callback1;
-  final Function(String) callback2;
-  final Function(String) callback3;
-  final Function(String) callback4;
+  final Function(String) callback;
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +34,7 @@ class ColorPalette extends StatelessWidget {
             flex:5,
             child: GestureDetector( 
               child: Container(
+                child: callback(baseColor1),
                 height: 100, 
                 color: ColorUtils.FromHex(baseColor1),
               ),
@@ -49,6 +44,7 @@ class ColorPalette extends StatelessWidget {
             flex:4,
             child: GestureDetector( 
               child: Container(
+                child: callback(baseColor2),
                 height: 100, 
                 color: ColorUtils.FromHex(baseColor2),
               ),
@@ -58,6 +54,7 @@ class ColorPalette extends StatelessWidget {
             flex:3,
             child: GestureDetector( 
               child: Container(
+                child: callback(baseColor3),
                 height: 100, 
                 color: ColorUtils.FromHex(baseColor3),
               ),
@@ -67,6 +64,7 @@ class ColorPalette extends StatelessWidget {
             flex:2,
             child: GestureDetector( 
               child: Container(
+                child: callback(baseColor4),
                 height: 100, 
                 color: ColorUtils.FromHex(baseColor4),
               ),

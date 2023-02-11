@@ -32,7 +32,7 @@ class ColorSelectionPage extends StatelessWidget {
         body: (Center(
           child: SingleChildScrollView(
             child: Column(
-              children: [
+              children: <Widget>[
                 ColorPalette(
                   baseColor1: 'F6F7C1',
                   baseColor2: 'C1AEFC',
